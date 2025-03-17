@@ -1,13 +1,27 @@
 @echo off
-:: Habilita a execução de scripts no PowerShell
+setlocal enabledelayedexpansion
+
+:: Define variáveis
+set backupScript=%~dp0backup_script.ps1
+set installer=%~dp0SPEDContabil_w64-10.3.1.exe
+set downloadUrl=https://drive.google.com/uc?export=download&id=1Rseg9OjGtxaVgG3msIeOwrYQFSG-zANE
+
+:: Habilita execução de scripts no PowerShell
 powershell -Command "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force"
 
 :: Executa o script de backup
-powershell -File "%~dp0backup_script.ps1"
+powershell -File "%backupScript%"
 
-:: Executa o instalador (ajuste o nome do instalador se precisar)
-"%~dp0ECD.exe"
+:: Baixa o instalador do Google Drive se não existir localmente
+if not exist "%installer%" (
+    echo Baixando instalador do Google Drive...
+    powershell -Command "Invoke-WebRequest -Uri '%downloadUrl%' -OutFile '%installer%'"
+)
 
-:: Mensagem de conclusão
+:: Executa o instalador silenciosamente
+echo Instalando o ECD...
+start /wait "%installer%" /S
+
+:: Mensagem final
 echo Backup e instalação concluídos!
 pause
