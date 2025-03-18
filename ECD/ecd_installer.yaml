@@ -1,0 +1,20 @@
+Id: RFB.ECD
+Publisher: RFB
+Name: ECD - Escrituração Contábil Digital
+Version: 1.0.0
+AppMoniker: ECD
+Installers:
+  - Architecture: x64
+    InstallerType: bat
+    InstallerUrl: https://github.com/FeeLipow/winget-repo/blob/main/ECD/backup_script.bat
+    InstallerSha256: F24A5BAB154237107074E0744E5D0750B0FA1149E896B873A8554D580B01B5B6
+    InstallerSuccessCodes:
+      - 0
+    InstallerSwitches:
+      Silent: ""
+      SilentWithProgress: ""
+      Interactive: ""
+    Commands:
+      - "ECD"
+ManifestType: installer
+ManifestVersion: 1.0.0
