@@ -1,8 +1,2 @@
-Sources:
-  - Packages:
-      - PackageIdentifier: ECD.ECD
-        PackageVersion: 1.0.0
-        DefaultLocale: en-US
-        ManifestType: singleton
-        ManifestVersion: 1.0.0
-        Path: ECD/ecd_installer.yaml
+Packages:
+  - Manifest: main/ECD/ecd_installer.yaml
