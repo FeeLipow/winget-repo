@@ -1,0 +1,18 @@
+Id: ECD.ECD
+Name: ECD
+Publisher: Receita Federal do Brasil
+AppMoniker: ecd
+Version: 1.0.0
+License: Proprietary
+InstallerType: bat
+Installers:
+  - Architecture: x64
+    InstallerUrl: https://www.dropbox.com/scl/fi/f7c649m9lztcij7ikgby0/backup_script.bat?rlkey=sawfi6ssruzrogtfga5ci4uvt&st=ohw3cupe&dl=1
+    InstallerSha256: 0148A445E8F8D62DB3E4F48C51057B1E99A73974CC2188F67B3A43BBB1AA81FF
+    Scope: machine
+    InstallModes:
+      - silent
+    Commands:
+      - backup_script.bat
+ManifestType: singleton
+ManifestVersion: 1.0.0
